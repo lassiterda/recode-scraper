@@ -60,27 +60,18 @@ request('http://www.recode.net', function (error, response, html) {
   console.log(("yep"));
   let arrArticles = $(".c-entry-box__body").map(function(idx, ele) {
     return {
-      tile: $(ele).children().length
+      title: $(ele).children(".c-entry-box__title").children().text(),
+      link: $(ele).children(".c-entry-box__title").children().attr("href"),
+      authorProfile: $(ele).children(".c-byline").children(".c-byline__item").children("a").attr("href"),
+      author: $(ele).children(".c-byline").children(".c-byline__item").children("a").text(),
+      time:  $(ele).children(".c-byline").children("time").text()
     }
-  });
-
-  // let arrArticles = $('a').filter(function(idx, link) {
-  // 	return $(link).attr("data-analytics-link") === 'article'
-  // })
-  // .map(function(idx, ele){
-  //     return {
-  //       title: $(ele).text(),
-  //       link: $(ele).attr("href"),
-  //       author: $(ele).parent().siblings(".c-byline").children("a").text(),
-  //       authorLink: $(ele).parent().siblings(".c-byline").children("a").attr("href"),
-  //       time: $(ele).parent().siblings(".c-byline").children("time").text().trim()
-  //     }
-  //   }).toArray()
+  }).toArray();
 
     console.log(arrArticles);
-  // Article.collection.insert(arrArticles)
-  //   .then((results) => { console.log(results) })
-  //   .catch((err) => { console.log(err) })
+  Article.collection.insert(arrArticles)
+    .then((results) => { console.log(results) })
+    .catch((err) => { console.log(err) })
 });
 
 
