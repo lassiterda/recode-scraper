@@ -1,0 +1,13 @@
+<body>
+  {{#if articles}}
+    {{#each articles}}
+      <article class="">
+        <a href="{{link}}"><h4>{{title}}</h4></a>
+        <p><a href="{{authorLink}}"><{{author}}</a> | {{time}}</p>
+      </article>
+      <hr>
+    {{/each}}
+  {{else}}
+    <!-- message indicating that there was an error, ask to reload page.   -->
+  {{/if}}
+</body>

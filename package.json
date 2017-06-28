@@ -1,0 +1,25 @@
+{
+  "name": "recode-remix-dal",
+  "version": "1.0.0",
+  "description": "simple scraper app that pull recode.net articles and allows users to comment",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.1",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.11.0",
+    "morgan": "^1.8.2",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "cheerio"
+  ],
+  "author": "david lassiter",
+  "license": "ISC"
+}
